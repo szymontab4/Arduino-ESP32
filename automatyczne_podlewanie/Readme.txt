@@ -20,3 +20,5 @@ Plan rozwoju:
 4. Rozbudowa zasilania, dołączenie przynajmniej jednego ogniwa oraz ładowania solarnego
   
 
+Update 11.03.2026
+Wystąpiło sporo problemów związanych z elektroniką samą w sobie. Najpierw dokładna nauka działania tranzysotra mosfet, potem przygotowanie samego schematu podłączenia całego układu jeszcze bez esp32. Niestety po podłączeniu esp wszystko się zepsuło, problemy z ciągłym działaniem silnika, niezatrzymywaniem się, restartami esp były ciągłe. Raz myślałem że rozwiązałem, a raz nie. Zeszło mi na tym sporo godzin i prawie tydzień czasu. Nie pomagały dodatkowe kondensatory, zmiany układu zasilania itd.. Rozwiązałem ten problem przez zastosowanie transoptora, jak narazie wszystko działa. 
