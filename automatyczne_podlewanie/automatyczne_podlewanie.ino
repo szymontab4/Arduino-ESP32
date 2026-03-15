@@ -18,15 +18,15 @@ void setup() {
   pinMode(odczyt, INPUT);
   Serial.begin(9600);
 
-  // --- 1. ODCZYT Z CZUJNIKA (W CAŁKOWITEJ CISZY RADIOWEJ) ---
+  // Odczyt z czujnika
   digitalWrite(zasilanie, HIGH); //wlaczenie zasilania dla czujnika wilgotnosci
   delay(500);
   
-  // Seria 10 pomiarów do wyciągnięcia średniej
+  // Seria 10 pomiarów do średniej
   int suma_odczytow = 0;
   for(int i = 0; i < 10; i++) {
     suma_odczytow += analogRead(odczyt);
-    delay(50); // krótka przerwa między próbkami
+    delay(50);
   }
   int wartosc_czujnika = suma_odczytow / 10; // Obliczenie średniej
   
@@ -35,11 +35,11 @@ void setup() {
 
   String status_podlewania="Nie";
 
-  // Użycie funkcji map i zabezpieczenie constrain
+  // Wyznaczanie procentu wilgotnosci
   int odczytana_wilgotnosc = map(wartosc_czujnika, wilgotnosc_0, wilgotnosc_100, 0, 100);
   odczytana_wilgotnosc = constrain(odczytana_wilgotnosc, 0, 100);
 
-  // --- 2. LOGIKA PODLEWANIA ---
+  //Podlewanie
   if(odczytana_wilgotnosc<45)
   {
     digitalWrite(pompa, HIGH);
@@ -48,7 +48,7 @@ void setup() {
     status_podlewania="Tak";
   }
 
-  // --- 3. POŁĄCZENIE Z WIFI ---
+  //WIFI
   WiFi.begin(ssid, password);
   unsigned long startAttemptTime = millis();
   while (WiFi.status() != WL_CONNECTED && millis() - startAttemptTime < 10000) {
@@ -56,7 +56,7 @@ void setup() {
     Serial.print(".");
   }
 
-  // --- 4. WYSYŁANIE DANYCH NA DISCORD ---
+  //DISCORD
   if (WiFi.status() == WL_CONNECTED) {
     HTTPClient http;
     http.begin(discord_url);
@@ -67,7 +67,7 @@ void setup() {
     http.end();
   }
 
-  // --- 5. USYPIANIE ---
+  //USPIENIE
   Serial.flush();
   esp_sleep_enable_timer_wakeup(uS_TO_S_FACTOR*czas_snu);
   esp_deep_sleep_start();
