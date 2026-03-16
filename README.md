@@ -1,9 +1,9 @@
-Główny projekt:
+Main Project:
 
-Automatyczne_podlewanie - system pomiaru wilgotności, automatycznego podlewania oraz komunikacji poprzez bota discord 
+Automatyczne_podlewanie – A moisture measurement and automatic watering system with communication via a Discord bot.
 
-Mniejsze projekty:
+Minor Projects:
 
-Kierunek_swiatla - pomiar kierunku za pomocą fotorezystorów i wyświetlanie kierunku z pomocą 5 diód led
+Kierunek_swiatla – Light direction measurement using photoresistors and displaying the direction with 5 LEDs.
 
-serwo_obracane_potencjometrem - pomiar rezystacji i na jego podstawie wyznacznie pozycji serwa
+serwo_obracane_potencjometrem – Resistance measurement used to determine and set the servo position.
