@@ -7,7 +7,7 @@ const char* password = "Falafelwpowietrzu";
 const char* discord_url = "https://discord.com/api/webhooks/1481352509392945233/W6FFZ42COL14CrWsFM5sIO5ZfmKaDS1oQH8RXgjz98ZZjN0IE61rRzJyz3wS7iyBUm3f";
 
 const int pompa=4, zasilanie=2, odczyt=A0; //piny
-const int czas_pompy=3 /*w sekundach*/, czas_snu=/*2*60*60*/30*60 /*w godzinach*/, wilgotnosc_0=2600, wilgotnosc_100=1100; /*wartosc z konsoli*/  //zmienne
+const int czas_pompy=2 /*w sekundach*/, czas_snu=2*60*60 /*w godzinach*/, wilgotnosc_0=2600, wilgotnosc_100=1100; /*wartosc z konsoli*/  //zmienne
 
 #define uS_TO_S_FACTOR 1000000ULL
 
@@ -26,7 +26,7 @@ void setup() {
   int suma_odczytow = 0;
   for(int i = 0; i < 10; i++) {
     suma_odczytow += analogRead(odczyt);
-    delay(50); // krótka przerwa między próbkami
+    delay(1000); // krótka przerwa między próbkami
   }
   int wartosc_czujnika = suma_odczytow / 10; // Obliczenie średniej
   
