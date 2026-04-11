@@ -10,7 +10,7 @@
 
 
 const char* ssid = "FunBox2-33BF";
-const char* password = "Falafelwpowietrzu";
+const char* password = "";
 
 String pobierzSuroweDane(String url) {
   HTTPClient http;
