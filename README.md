@@ -2,6 +2,8 @@ Main Project:
 
 Automatyczne_podlewanie – A moisture measurement and automatic watering system with communication via a Discord bot.
 
+projekt_piasek - simulation of sand/water movement with gyroscope 
+
 Minor Projects:
 
 Kierunek_swiatla – Light direction measurement using photoresistors and displaying the direction with 5 LEDs.
